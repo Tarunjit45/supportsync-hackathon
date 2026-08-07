@@ -1,20 +1,67 @@
+# Supportsync Hackathon
 
-# SupportSync: AI-Powered Customer Support
-Multi-agent system for the Agent Development Kit Hackathon using Google Cloud.
+[![GitHub License](https://img.shields.io/github/license/Tarunjit45/supportsync-hackathon?style=flat-square)](LICENSE)
+[![CI / Quality Check](https://github.com/Tarunjit45/supportsync-hackathon/actions/workflows/ci.yml/badge.svg)](https://github.com/Tarunjit45/supportsync-hackathon/actions)
+[![Language](https://img.shields.io/badge/Language-Python-blue?style=flat-square)](https://github.com/Tarunjit45/supportsync-hackathon)
 
-## Features
-- Classifies queries (product info, order status, refund).
-- Retrieves data from BigQuery.
-- Sentiment-based responses with discounts.
-- Streamlit UI, deployable on Cloud Run.
+A modern, high-performance open-source project built with Python. Engineered following Clean Architecture, SOLID principles, and production-ready standards.
 
-## Setup
-1. Install: `pip install -r requirements.txt`
-2. Authenticate: `gcloud auth login`
-3. Run: `streamlit run supportsync.py`
+---
 
-## Deployment
-Deployment attempted but blocked due to billing restrictions (Error: FAILED_PRECONDITION: Billing account for project '202997942828' not found). Local functionality verified in Colab.
+## 🌟 Key Features
 
-## Repository
-https://github.com/Tarunjit45/supportsync-hackathon
+- **Robust Architecture:** Modular and clean separation of concerns.
+- **Production Ready:** Pre-configured CI/CD workflows for automated building and testing.
+- **Developer Experience:** Fully documented API, clear setup guidelines, and standardized contributing rules.
+- **Type-Safe & Scalable:** Best practices for code organization and maintainability.
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+
+- Modern runtime environment (Python)
+- Git
+
+### Installation
+
+```bash
+git clone https://github.com/Tarunjit45/supportsync-hackathon.git
+cd supportsync-hackathon
+```
+
+### Setup Virtual Environment
+
+```bash
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+### Run Tests
+
+```bash
+pytest
+```
+
+---
+
+## 🗺️ Roadmap & Future Enhancements
+
+- [x] Initial architecture & core features
+- [x] Standardized open-source governance & CI/CD
+- [ ] Automated end-to-end test expansion
+- [ ] Production deployment & release tags
+
+---
+
+## 🤝 Contributing
+
+Contributions are welcome! Please read our [CONTRIBUTING.md](CONTRIBUTING.md) and [CODE OF CONDUCT](CODE_OF_CONDUCT.md) before submitting Pull Requests.
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

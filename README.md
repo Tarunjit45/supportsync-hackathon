@@ -1,67 +1,85 @@
-# 🚀 supportsync-hackathon
+# ⚡ SupportSync — Google Cloud Vertex AI & BigQuery Support Intelligence
 
-![Language](https://img.shields.io/badge/Language-Python-blue?style=for-the-badge)
-![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
-![Status](https://img.shields.io/badge/Production-Active-success?style=for-the-badge)
+[![Streamlit](https://img.shields.io/badge/UI-Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://streamlit.io/)
+[![Google Cloud](https://img.shields.io/badge/GCP-Vertex%20AI%20%7C%20BigQuery-4285F4?style=for-the-badge&logo=googlecloud&logoColor=white)](https://cloud.google.com/)
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![Hackathon](https://img.shields.io/badge/Project-Google%20Cloud%20Hackathon-00C853?style=for-the-badge)](README.md)
+[![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 
-## 📌 Overview
+**SupportSync** is an enterprise customer support intelligence platform engineered for the **Google Cloud AI Hackathon**. Built with **Streamlit**, **Google Cloud BigQuery**, and **Google Cloud Vertex AI**, SupportSync ingests customer support tickets, scores customer sentiment and urgency, queries historical resolution databases, and automatically drafts context-aware responses for support agents.
 
-A high-performance application engineered by Tarunjit Biswas for quality and scalability.
+---
 
-## ✨ Key Features & Architecture
+## 📌 Architecture & GCP Data Flow
 
-- **High-Performance Codebase:** Built using `Python` and modern engineering principles.
-- **Modular & Scalable Design:** Structured directory tree for seamless development and deployment.
+```
+[ Inbound Customer Support Ticket ]
+                  |
+                  v
++-------------------------------------------------------------+
+|                 Streamlit SupportSync Portal                |
+|                      (`supportsync.py`)                     |
++-------------------------------------------------------------+
+                  |
+                  +-----------------------------+
+                  |                             |
+                  v                             v
++-------------------------------+ +-------------------------------+
+|     GCP Vertex AI Endpoint    | |     Google Cloud BigQuery     |
+|   Sentiment & Urgency Scoring | |   Historical Ticket Indexing  |
+|   & Resolution Text Synthesis | |   & SLA Analytics Store       |
++-------------------------------+ +-------------------------------+
+                  |                             |
+                  +--------------+--------------+
+                                 |
+                                 v
++-------------------------------------------------------------+
+|        Unified Agent Dashboard with Auto-Drafted Reply      |
++-------------------------------------------------------------+
+```
 
-## 🛠️ Tech Stack & Dependencies
+---
 
-- **Core Language:** `Python`
-- **Libraries & Tools:** Python
-- **Deployment Infrastructure:** Vercel Edge / Cloud Services
+## ✨ Features
 
-## 📁 Architecture & File Layout
+* 📊 **Automated Sentiment Analysis:** Evaluates customer frustration, urgency, and churn risk on ticket ingestion.
+* 🔍 **BigQuery Vector & Ticket Lookup:** Connects to BigQuery datasets to retrieve historical resolutions to similar customer issues.
+* ✍️ **Agent Response Generator:** Synthesizes professional, empathetic resolution replies adhering to enterprise SLAs.
+
+---
+
+## 📁 Repository Structure
 
 ```text
 supportsync-hackathon/
-├── .github
-├── .github/ISSUE_TEMPLATE
-├── .github/ISSUE_TEMPLATE/bug_report.md
-├── .github/ISSUE_TEMPLATE/feature_request.md
-├── .github/PULL_REQUEST_TEMPLATE.md
-├── .github/workflows
-├── .github/workflows/ci.yml
-├── CODE_OF_CONDUCT.md
-├── CONTRIBUTING.md
-├── LICENSE
-├── README.md
-├── supportsync.py
+├── supportsync.py      # Streamlit application, GCP BigQuery & Vertex AI client
+├── LICENSE             # MIT License
+└── README.md
 ```
 
-## 🚀 Quickstart & Installation
+---
 
-### Prerequisites
-- Python 3.9+
-- pip package manager
+## 🚀 Getting Started
 
-### Setup Instructions
+### 1. Prerequisites
+* Python 3.10+
+* Google Cloud Platform account with Vertex AI and BigQuery APIs enabled
+* Google Cloud SDK (`gcloud auth application-default login`)
 
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/Tarunjit45/supportsync-hackathon.git
-   cd supportsync-hackathon
-   ```
+### 2. Installation
+```bash
+git clone https://github.com/Tarunjit45/supportsync-hackathon.git
+cd supportsync-hackathon
 
-2. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
+pip install streamlit google-cloud-bigquery google-cloud-aiplatform requests
+```
 
-3. **Execute application:**
-   ```bash
-   python main.py
-   ```
+### 3. Run SupportSync
+```bash
+streamlit run supportsync.py
+```
 
-## 📜 Author & License
+---
 
-Architected & Developed by **[Tarunjit Biswas](https://github.com/Tarunjit45)**.  
-Distributed under the **MIT License**.
+## 📄 License
+This project is licensed under the [MIT License](LICENSE).
